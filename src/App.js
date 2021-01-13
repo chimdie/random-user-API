@@ -28,7 +28,9 @@ export default class App extends React.Component{
             <h3 className='user--name'> 
               {`${this.state.user.name.first}  ${this.state.user.name.last}`} 
             </h3>
+            <hr></hr>
             <p className='user--email'>EMAIL: {this.state.user.email} </p>
+            <hr></hr>
             <p className='user--location'>RESIDENCE: {`${this.state.user.location.city}, ${this.state.user.location.country}`} </p>
           </div>
         </div>
