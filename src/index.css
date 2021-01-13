@@ -16,8 +16,7 @@ code {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
-  
+  background-color: white;
 }
 .user{
   display: flex;
@@ -30,10 +29,17 @@ code {
   box-shadow: 0 2px 20px #a7b7be;
 }
 .user--img{
-  width: 300px;
+  width: 350px;
   object-fit: cover;
   display: block;
 }
 .user--info{
   margin: 0 auto;
+  padding-bottom: 1rem;
+}
+.user--email, .user--location{
+  font-weight: 500;
+}
+span{
+  font-weight: 700;
 }
