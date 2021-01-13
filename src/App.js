@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export default class App extends React.Component{
+  state = {
+    loading: true,
+    user: null
+  }
+  async componentDidMount(){
+    const url = `https://api.randomuser.me`;
+    try{
+      const response = await fetch(url);
+      const data = await response.json()
+      this.setState({
+        user: data.results[0],
+        loading: false
+      })
+    }catch(err){
+      console.error(err)
+    }
+  }
+  render(){
+    return (
+      <div className='container'>
+       {this.state.loading ? 'loading....' : 
+       <div className='user'>
+          <img src={this.state.user.picture.large} alt='user--img' className='user--img' />
+          <div className='user--info'>
+            <h3 className='user--name'> 
+              {`${this.state.user.name.first}  ${this.state.user.name.last}`} 
+            </h3>
+            <p className='user--email'>EMAIL: {this.state.user.email} </p>
+            <p className='user--location'>RESIDENCE: {`${this.state.user.location.city}, ${this.state.user.location.country}`} </p>
+          </div>
+        </div>
+       }
+      </div>
   );
+  }
 }
-
-export default App;
