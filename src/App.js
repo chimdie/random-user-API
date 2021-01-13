@@ -1,4 +1,5 @@
 import React from "react";
+import User from './User'
 
 export default class App extends React.Component{
   state = {
@@ -35,6 +36,7 @@ export default class App extends React.Component{
           </div>
         </div>
        }
+       <User />
       </div>
   );
   }
