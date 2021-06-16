@@ -1,5 +1,6 @@
 import React from "react";
 import User from './User'
+import Config from './Config'
 
 export default class App extends React.Component{
   state = {
@@ -22,7 +23,7 @@ export default class App extends React.Component{
   render(){
     return (
       <div className='container'>
-       {this.state.loading ? 'loading....' : 
+       {/* {this.state.loading ? 'loading....' : 
        <div className='user'>
           <img src={this.state.user.picture.large} alt='user--img' className='user--img' />
           <div className='user--info'>
@@ -35,8 +36,9 @@ export default class App extends React.Component{
             <p className='user--location'><span>RESIDENCE:</span> {`${this.state.user.location.city}, ${this.state.user.location.country}`} </p>
           </div>
         </div>
-       }
-       <User />
+       } */}
+       {/* <User /> */}
+       <Config />
       </div>
   );
   }
