@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function User() {
   const [user, setUser] = useState(null);
   const [loading, setLoader] = useState(true);
-  
+
   const url = "https://api.randomuser.me";
 
   useEffect(() => {
